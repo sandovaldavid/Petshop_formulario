@@ -3,7 +3,6 @@ export function valida(input) {
     if (validadores[tipoDeInput]) {
         validadores[tipoDeInput](input);
     }
-    console.log(input.validity);
     if (input.validity.valid) {
         input.parentElement.classList.remove("input-container--invalid");
         input.parentElement.querySelector(".input-message-error").innerHTML =
@@ -38,6 +37,22 @@ const mensajesDeError = {
     nacimiento: {
         valueMissing: "Este campo nacimiento no puede estar vacio.",
         customError: "debes tener al menos 18 anhos de Edad",
+    },
+    numero: {
+        valueMissing: "Este campo numero no puede estar vacio.",
+        patternMismatch: "El formato requeridoes: (XXXXXXXXXX) 10 numeros",
+    },
+    direccion: {
+        valueMissing: "Este campo direccion no puede estar vacio.",
+        patternMismatch: "La direccion debe contener entre 10 a 40 caracteres",
+    },
+    ciudad: {
+        valueMissing: "Este campo ciudad no puede estar vacio.",
+        patternMismatch: "La ciudad debe contener entre 10 a 40 caracteres",
+    },
+    estado: {
+        valueMissing: "Este campo estado no puede estar vacio.",
+        patternMismatch: "La estado debe contener entre 10 a 40 caracteres",
     },
 };
 
